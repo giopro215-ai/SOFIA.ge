@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ka"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>სოფია — ფილოსოფიის პლატფორმა</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;700&family=Noto+Sans+Georgian:wght@400;600&display=swap">
+<style>
+:root{box-sizing:border-box;color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#000;--ink:#F2F2F2;--mut:#A3A3A3;--sea:#fff;--ver:#CFCFCF;--card:#0B0B0B;--ln:#2B2B2B;--bgi:radial-gradient(ellipse at 70% 30%,#181818,transparent 65%),linear-gradient(#000,#050505)}
+:root[data-theme="light"]{color-scheme:light;--bg:#EDEDED;--ink:#0A0A0A;--mut:#555;--sea:#000;--ver:#333;--card:#F7F7F7;--ln:#BDBDBD;--bgi:radial-gradient(ellipse at 70% 30%,#fff,transparent 65%),linear-gradient(#E4E4E4,#EDEDED)}
+body:after{content:"";position:fixed;left:0;right:0;bottom:0;height:38vh;z-index:-1;pointer-events:none;opacity:.08;background:repeating-linear-gradient(90deg,var(--sea) 0 16px,transparent 16px 84px);-webkit-mask-image:linear-gradient(transparent,#000);mask-image:linear-gradient(transparent,#000)}
+*,*:before,*:after{box-sizing:inherit}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bgi),var(--bg);background-attachment:fixed;color:var(--ink);font:400 17px/1.7 "Noto Sans Georgian",system-ui,sans-serif}
+h1,h2,h3{font-family:"Noto Serif Georgian",Georgia,serif;line-height:1.25;margin:0}
+a{color:inherit}.w{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:12px;flex-wrap:wrap}
+nav b{font:700 22px "Noto Serif Georgian",serif}nav span a{margin-left:18px;text-decoration:none;color:var(--mut);font-size:15px}
+nav span a:hover{color:var(--sea)}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:36px 0 64px}
+.hero h1{font-size:clamp(30px,5vw,50px)}.hero p{color:var(--mut);max-width:46ch}
+.btn{display:inline-block;padding:12px 22px;border-radius:4px;background:var(--sea);color:var(--bg);text-decoration:none;font-weight:600;margin:6px 10px 6px 0;border:1px solid var(--sea)}
+.btn.o{background:none;color:var(--ink);border-color:var(--ln)}
+.btn:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--ver);outline-offset:2px}
+.map{background:var(--card);border:1px solid var(--ln);border-radius:6px;padding:12px}
+.map svg{width:100%;height:auto;display:block}.map line{stroke:var(--ln);stroke-width:1.5}
+.nd{cursor:pointer}.nd circle{fill:var(--card);stroke:var(--sea);stroke-width:2;transition:fill .2s}
+.nd.p circle{stroke:var(--ver);stroke-dasharray:3 3}.nd.on circle,.nd:hover circle{fill:var(--sea)}.nd.on.p circle{fill:var(--ver)}
+.nd text{fill:var(--ink);font:600 11px "Noto Sans Georgian",sans-serif;text-anchor:middle;pointer-events:none}
+.info{min-height:104px;border-top:1px solid var(--ln);margin-top:8px;padding-top:10px;font-size:15px}
+.info h3{font-size:18px}.tag{font-size:13px;color:var(--ver);font-weight:600}
+section{padding:52px 0;border-top:1px solid var(--ln)}section>.w>h2{font-size:clamp(24px,3.5vw,34px);margin-bottom:8px}
+.lead{color:var(--mut);max-width:60ch;margin:0 0 28px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.c{border-left:3px solid var(--sea);padding:4px 0 4px 16px}.c.p{border-color:var(--ver)}
+.c h3{font-size:19px;margin-bottom:4px}.c p{margin:0;color:var(--mut);font-size:15px}
+.q{font:400 clamp(22px,3vw,30px)/1.5 "Noto Serif Georgian",serif;max-width:30ch}.q small{display:block;font:400 15px "Noto Sans Georgian";color:var(--mut);margin-top:8px}
+.t{background:var(--card);border:1px solid var(--ln);border-radius:6px;padding:24px}.t.f{border:2px solid var(--ver)}
+.t h3{font-size:22px}.pr{font:700 30px "Noto Serif Georgian",serif;margin:6px 0 12px}.pr small{font:400 14px "Noto Sans Georgian";color:var(--mut)}
+.t ul{padding-left:18px;margin:0 0 16px;font-size:15px;color:var(--mut)}
+.sm{columns:2 240px;font-size:15px;color:var(--mut)}.sm b{color:var(--ink)}.sm div{break-inside:avoid;margin-bottom:12px}
+footer{padding:28px 0 40px;border-top:1px solid var(--ln);color:var(--mut);font-size:14px}
+button.th{background:none;border:1px solid var(--ln);color:var(--ink);border-radius:4px;padding:4px 10px;cursor:pointer;margin-left:16px}
+.qz{max-width:640px}.qz h3{font-size:20px;margin-bottom:10px}.qz button{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--ln);color:var(--ink);padding:12px 14px;margin:8px 0;border-radius:4px;font:inherit;cursor:pointer}.qz button:hover{border-color:var(--sea)}
+.pg{position:fixed;top:0;left:0;height:3px;width:0;background:var(--ver);z-index:20}#bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.hero>div>*{animation:up .9s both}.hero>div>*:nth-child(2){animation-delay:.15s}.hero>div>*:nth-child(3){animation-delay:.3s}.hero>div>*:nth-child(4){animation-delay:.4s}
+@keyframes up{from{opacity:0;transform:translateY(18px)}}@keyframes pl{50%{stroke-width:5}}.nd.on circle{animation:pl 1.6s infinite}
+.mq{overflow:hidden;border-block:1px solid var(--ln);padding:12px 0;font:400 19px "Noto Serif Georgian",serif;color:var(--mut);white-space:nowrap}
+.mq div{display:inline-block;animation:mq 45s linear infinite}.mq:hover div{animation-play-state:paused}.mq span{margin:0 26px}.mq b{color:var(--sea);font-weight:400}
+@keyframes mq{to{transform:translateX(-50%)}}
+.fc{perspective:900px;height:180px;cursor:pointer}.fc>div{position:relative;height:100%;transition:transform .6s;transform-style:preserve-3d}.fc.f>div{transform:rotateY(180deg)}
+.fc i,.fc u{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--ln);background:var(--card);border-radius:6px;padding:18px;text-decoration:none;font-style:normal}
+.fc u{transform:rotateY(180deg);font-size:15px;color:var(--mut)}.fc b{font:700 20px "Noto Serif Georgian",serif;display:block}.fc small{color:var(--ver);font-size:14px}
+.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}.tl div{border-top:3px solid var(--sea);padding-top:10px;font-size:15px;color:var(--mut)}.tl b{display:block;font:700 18px "Noto Serif Georgian",serif;color:var(--ink)}
+html.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}html.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.hero>div>*,.mq div,.nd.on circle{animation:none}html.js .rv{opacity:1;transform:none}}
+.chips button{background:none;border:1px solid var(--ln);color:var(--ink);padding:6px 14px;border-radius:20px;margin:0 8px 8px 0;font:inherit;font-size:14px;cursor:pointer}.chips button.on{background:var(--sea);color:var(--bg);border-color:var(--sea)}
+.pc{background:var(--card);border:1px solid var(--ln);border-radius:6px;padding:18px}.pc h3{font-size:20px}.pc small{color:var(--ver);display:block;margin:2px 0 8px}.pc p{margin:0 0 10px;font-size:15px;color:var(--mut)}
+.qt{font:italic 400 15px/1.5 "Noto Serif Georgian",serif;border-left:2px solid var(--sea);padding-left:10px}
+#gs{width:100%;max-width:420px;padding:11px 14px;border-radius:4px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:inherit;margin-bottom:16px}
+#gl details{border-bottom:1px solid var(--ln);padding:10px 0}#gl summary{cursor:pointer;font:700 18px "Noto Serif Georgian",serif}#gl p{margin:8px 0 0;color:var(--mut);font-size:15px}
+nav span a.rg{color:var(--ink);border:1px solid var(--sea);padding:5px 14px;border-radius:4px}
+dialog{border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:6px;padding:26px;max-width:420px;width:calc(100% - 32px)}dialog::backdrop{background:rgba(0,0,0,.75)}
+dialog h2{font-size:24px;margin-bottom:6px}dialog label{display:block;margin:12px 0 4px;font-size:14px;color:var(--mut)}
+dialog input,dialog select{width:100%;padding:10px 12px;border-radius:4px;border:1px solid var(--ln);background:var(--bg);color:var(--ink);font:inherit}
+dialog .ck{display:flex;gap:8px;align-items:flex-start;font-size:13px;margin-top:12px}dialog .ck input{width:auto;margin-top:5px}
+#rmsg{margin-top:12px;font-size:14px;min-height:20px;color:var(--ver)}.x{float:right;background:none;border:0;color:var(--ink);font-size:24px;cursor:pointer}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--sea)}.brand span{display:block;line-height:1.1}.brand b{display:block;color:var(--ink)}.brand small{display:block;font-size:10px;letter-spacing:.32em;color:var(--mut)}
+#bio{max-width:640px;max-height:88vh;overflow:auto}#bio h2{font-size:30px;margin:12px 0 4px}#bio h3{font-size:16px;margin:18px 0 6px;color:var(--ver)}#bio ul{margin:0;padding-left:18px;color:var(--mut);font-size:15px}#bio p{color:var(--mut)}
+.av{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1px solid var(--sea);display:flex;align-items:center;justify-content:center;font:700 38px "Noto Serif Georgian",serif}
+.bn{display:flex;gap:10px;margin-top:16px}.bn button{background:none;border:1px solid var(--ln);color:var(--ink);padding:8px 14px;border-radius:4px;cursor:pointer;font:inherit}#bio .btn{cursor:pointer;font:inherit;margin-top:16px}
+.more{margin-top:10px;font-size:14px;color:var(--ver)}.pc:hover{border-color:var(--sea)}.lk{background:none;border:0;color:var(--ver);cursor:pointer;font:inherit;padding:6px 0}
+nav span{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}nav span a{margin-left:0}
+section{content-visibility:auto;contain-intrinsic-size:auto 640px}
+#cap{position:fixed;left:16px;bottom:10px;font-size:12px;letter-spacing:.08em;color:var(--mut);opacity:.7;pointer-events:none;z-index:1}
+.hero>div:nth-child(1){transform:translateY(calc(var(--sy,0)*-.06px))}.hero>div:nth-child(2){transform:translateY(calc(var(--sy,0)*.04px))}
+html.js .w>h2:after{content:"";display:block;height:2px;width:0;background:var(--sea);margin-top:10px;transition:width 1s .25s}html.js .w>h2.in:after{width:64px}
+html.js .tl>div.rv{transform:translateX(-24px)}html.js .tl>div.rv.in{transform:none}
+.t:hover,.pc:hover{border-color:var(--sea);box-shadow:0 10px 30px rgba(127,127,127,.15)}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}}dialog[open]{animation:pop .3s}
+#bio{position:relative;background:radial-gradient(circle at 90% 0%,hsl(var(--hue,200) 70% 55%/.22),transparent 55%),var(--card)}
+#bio:before{content:attr(data-gl);position:absolute;right:14px;top:-6px;font:700 190px/1 "Noto Serif Georgian",serif;opacity:.07;pointer-events:none}
+#bio .av{border-color:hsl(var(--hue,200) 70% 60%)}
+@media(prefers-reduced-motion:reduce){dialog[open]{animation:none}html.js .w>h2:after{width:64px;transition:none}}
+html{scroll-behavior:smooth}.skip{position:absolute;left:-999px;top:8px;background:var(--sea);color:var(--bg);padding:8px 14px;z-index:30;border-radius:4px}.skip:focus{left:8px}
+#up{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--sea);background:var(--card);color:var(--ink);cursor:pointer;font-size:20px;z-index:25;opacity:0;pointer-events:none;transition:opacity .3s}#up.on{opacity:1;pointer-events:auto}
+#fq details{border-bottom:1px solid var(--ln);padding:10px 0}#fq summary{cursor:pointer;font:700 18px "Noto Serif Georgian",serif}#fq p{margin:8px 0 0;color:var(--mut);font-size:15px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+#plans .g{max-width:780px}.bd{display:inline-block;background:var(--sea);color:var(--bg);font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:10px}.pr s{color:var(--mut);font-size:20px;font-weight:400;margin-right:8px}
+.t.f{border:2px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(120deg,var(--sea),var(--ln),var(--sea),var(--ln)) border-box;background-size:100% 100%,300% 300%;animation:bdr 6s linear infinite}@keyframes bdr{to{background-position:0 0,300% 0}}
+.pp{display:flex;align-items:baseline;gap:10px;margin:8px 0 12px}.pp b{font:700 40px "Noto Serif Georgian",serif}.old{text-decoration:line-through;color:var(--mut);font-size:20px}.pp em{font-style:normal;background:var(--sea);color:var(--bg);padding:2px 8px;border-radius:4px;font-size:13px}
+#pay ul{padding-left:18px;color:var(--mut);font-size:14px;margin:0 0 6px}.sec{font-size:12px;color:var(--mut);margin:12px 0 0}
+@media(prefers-reduced-motion:reduce){.t.f{animation:none}}
+.vd{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
+.vp{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--ln);border-radius:6px;overflow:hidden}.vp img,.vp iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.vp button{position:absolute;inset:0;width:100%;height:100%;background:rgba(0,0,0,.4);border:0;cursor:pointer;color:#fff;font-size:56px}.vp button:hover{background:rgba(0,0,0,.25)}
+.vm{margin-top:12px}.vm h3{font-size:20px;margin-bottom:2px}.vm small{color:var(--mut)}.vm a{display:inline-block;margin-top:6px;color:var(--ver);font-size:14px}
+.vl{display:flex;flex-direction:column;gap:10px}.vi{display:flex;gap:10px;text-align:left;background:var(--card);border:1px solid var(--ln);color:var(--ink);padding:8px;border-radius:6px;cursor:pointer;font:inherit;font-size:14px;align-items:center}.vi.on,.vi:hover{border-color:var(--sea)}.vi img{width:96px;aspect-ratio:16/9;object-fit:cover;border-radius:4px;flex:none}.vi small{display:block;color:var(--mut);font-size:12px}
+#jt{width:100%;padding:12px;border-radius:4px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font:inherit;margin-bottom:8px;resize:vertical}
+.ch{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:6px 0 16px}.ch .ar{color:var(--mut)}.ch span:not(.ar){padding:4px 12px;border:1px solid var(--ln);border-radius:20px;font-size:14px;background:var(--card)}
+.xc{margin:8px 0;font-size:15px;color:var(--mut)}.xc b{color:var(--ink)}.rq{margin:14px 0;padding:10px 14px;border-left:2px solid var(--sea);color:var(--ink);font-style:italic}.ln{font-size:14px;margin:6px 0}
+@media(max-width:760px){.vd{grid-template-columns:1fr}}
+@media(max-width:760px){#cap{display:none}}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23000%27/%3E%3Cpath d=%27M8 13L16 8L24 13Z%27 fill=%27%23fff%27/%3E%3Cpath d=%27M9.5 14.5h2.2v8H9.5zM14.9 14.5h2.2v8h-2.2zM20.3 14.5h2.2v8h-2.2zM8 23.5h16v1.8H8z%27 fill=%27%23fff%27/%3E%3C/svg%3E"><meta name="description" content="სოფია — ქართულენოვანი ფილოსოფიის პლატფორმა: ისტორია, ფილოსოფოსთა ბიოგრაფიები, მიმდინარეობები, ლექსიკონი და ქვიზი."><link rel="canonical" href="https://bitter-butterfly-856c.giopro215.workers.dev/"><meta name="theme-color" content="#000000">
+<meta property="og:type" content="website"><meta property="og:locale" content="ka_GE"><meta property="og:site_name" content="სოფია"><meta property="og:title" content="სოფია — ფილოსოფიის პლატფორმა"><meta property="og:description" content="სოფია — ქართულენოვანი ფილოსოფიის პლატფორმა: ისტორია, ფილოსოფოსთა ბიოგრაფიები, მიმდინარეობები, ლექსიკონი და ქვიზი."><meta property="og:url" content="https://bitter-butterfly-856c.giopro215.workers.dev/"><meta property="og:image" content="https://bitter-butterfly-856c.giopro215.workers.dev/og.png"><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"სოფია","url":"https://bitter-butterfly-856c.giopro215.workers.dev/","inLanguage":"ka","description":"სოფია — ქართულენოვანი ფილოსოფიის პლატფორმა: ისტორია, ფილოსოფოსთა ბიოგრაფიები, მიმდინარეობები, ლექსიკონი და ქვიზი."}</script>
+</head><body><a class="skip" href="#free">გადასვლა შინაარსზე</a><canvas id="bg" aria-hidden="true"></canvas><div id="cap" aria-hidden="true"></div><div class="pg" id="pg"></div>
+<div class="w"><nav><a class="brand" href="#" aria-label="სოფია"><svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 13L16 8L24 13Z" fill="currentColor"/><path d="M9.5 14.5h2.2v8H9.5zM14.9 14.5h2.2v8h-2.2zM20.3 14.5h2.2v8h-2.2zM8 23.5h16v1.8H8z" fill="currentColor"/></svg><span><b>სოფია</b><small>ΣΟΦΙΑ</small></span></a><span><a href="#free">უფასო</a><a href="#people">ფილოსოფოსები</a><a href="#gloss">ლექსიკონი</a><a href="#quiz">ქვიზი</a><a href="#premium">Premium</a><a href="#plans">გეგმები</a><a href="#sitemap">რუკა</a><a href="#" class="rg" data-p="Free">რეგისტრაცია</a><button class="th" id="th" aria-label="თემის შეცვლა">◐</button></span></nav>
+<div class="hero"><div>
+<h1>ფილოსოფია, რომელიც არ ჩერდება სახელმძღვანელოზე</h1>
+<p>ათასწლეულების ფიქრი ერთ რუკაზე. დაიწყე უფასოდ, გაიგე ვინ ვის უპასუხა, და გადადი სიღრმისეულ კურსებსა და ტრაქტატების ანალიზზე.</p>
+<a class="btn" href="#free">დაიწყე უფასოდ</a><a class="btn o" href="#plans">იხილე გეგმები</a></div>
+<div class="map"><svg id="svg" viewBox="0 0 400 335" role="img" aria-label="ფილოსოფოსთა ინტერაქტიული რუკა"></svg>
+<div class="info" id="info" aria-live="polite"></div></div></div></div>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+<section id="free"><div class="w"><h2>უფასო ბიბლიოთეკა</h2><p class="lead">ყველასთვის ღია საფუძველი: რა მოხდა, ვინ თქვა და რატომ აქვს დღესაც მნიშვნელობა.</p>
+<div class="g">
+<div class="c"><h3>ფილოსოფიის ისტორია</h3><p>ანტიკურობიდან თანამედროვეობამდე, ეპოქების მიხედვით.</p></div>
+<div class="c"><h3>მიმდინარეობები</h3><p>სტოიციზმი, ეგზისტენციალიზმი, პრაგმატიზმი და სხვა.</p></div>
+<div class="c"><h3>მოაზროვნეები</h3><p>თითო გვერდი: ცხოვრება, მთავარი იდეა, საწყისი ტექსტები.</p></div>
+<div class="c"><h3>ბლოგი და ქვიზები</h3><p>მოკლე სტატიები და ტესტი: რომელი სკოლა გიხდება?</p></div></div></div></section>
+
+<section id="questions"><div class="w"><h2>ფილოსოფიის ოთხი დიდი კითხვა</h2><p class="lead">დააჭირე ბარათს და გადააბრუნე.</p><div class="g">
+<div class="fc" tabindex="0" role="button"><div><i><b>რა არსებობს?</b><small>მეტაფიზიკა</small></i><u>რა არის რეალობა: მატერია, გონება თუ ორივე?</u></div></div>
+<div class="fc" tabindex="0" role="button"><div><i><b>საიდან ვიცით?</b><small>ეპისტემოლოგია</small></i><u>რა გვაძლევს ცოდნას: გამოცდილება, გონება თუ რწმენა?</u></div></div>
+<div class="fc" tabindex="0" role="button"><div><i><b>როგორ ვიცხოვროთ?</b><small>ეთიკა</small></i><u>რა არის სიკეთე და რა გვმართებს სხვების მიმართ?</u></div></div>
+<div class="fc" tabindex="0" role="button"><div><i><b>რა არის ლამაზი?</b><small>ესთეტიკა</small></i><u>რატომ გვეუფლება ხელოვნება და სილამაზე?</u></div></div></div></div></section>
+<section id="timeline"><div class="w"><h2>ფიქრის გზა დროში</h2><p class="lead">ხუთი ეპოქა, ერთი გაგრძელებადი საუბარი.</p><div class="tl">
+<div><b>ანტიკურობა</b>ძვ.წ. VI – ახ.წ. V ს.<br>სოკრატე, პლატონი, არისტოტელე</div>
+<div><b>შუა საუკუნეები</b>V–XV ს.<br>ავგუსტინე, თომა აქვინელი, იბნ სინა</div>
+<div><b>ახალი დრო</b>XVII–XVIII ს.<br>დეკარტი, ჰიუმი, კანტი</div>
+<div><b>XIX საუკუნე</b>ჰეგელი, მარქსი, ნიცშე</div>
+<div><b>XX–XXI საუკუნე</b>ვიტგენშტაინი, სარტრი, არენდტი</div></div></div></section>
+<section id="chains"><div class="w"><h2>გავლენის ჯაჭვები</h2><p class="lead">იდეები ვაკუუმში არ ჩნდება: ვინ ვისგან სწავლობდა და ვინ გააგრძელა. დააჭირე სახელს ბიოგრაფიისთვის.</p><div id="chd"></div></div></section>
+<section id="people"><div class="w"><h2>ფილოსოფოსები და მათი ციტატები</h2><p class="lead">ჯაჭვი: სოკრატე → პლატონი → არისტოტელე. გაფილტრე ეპოქით და დააჭირე ბარათს ბიოგრაფიისთვის. ციტატები გადმოცემითი თარგმანია, ზუსტი წყარო გადაამოწმეთ.</p><div class="chips" id="ch"></div><div class="g" id="pp"></div></div></section>
+<section id="gloss"><div class="w"><h2>ფილოსოფიური ლექსიკონი</h2><p class="lead">მიმდინარეობები და ცნებები მარტივად. 8 ცნება უფასოა, დანარჩენი 🔒 Premium-შია.</p><input id="gs" type="search" placeholder="მოძებნე, მაგ.: სტოიციზმი" aria-label="ძებნა"><div id="gl"></div></div></section>
+<section id="quiz"><div class="w"><h2>რომელი სკოლა გიხდება?</h2><p class="lead">ექვსი შემთხვევითი კითხვა, ყოველ ჯერზე განსხვავებული. შედეგი იმას გვიჩვენებს, რომელი ფილოსოფიური სკოლა ესადაგება შენს აზროვნებას.</p><div class="qz" id="qz" aria-live="polite"></div></div></section>
+
+<section id="exp"><div class="w"><h2 id="eh">ფიქრის ექსპერიმენტი</h2><p class="lead" id="eq"></p><div class="qz" id="eb"></div></div></section>
+<section id="today"><div class="w"><h2>დღის ციტატა</h2><p class="lead">ახალი ფიქრი ყოველ დღე.</p>
+<div class="q" id="q"></div></div></section>
+
+<section id="premium"><div class="w"><h2>Premium: სიღრმე</h2><p class="lead">მათთვის, ვისაც სურს ტექსტთან ახლოს ყოფნა და დისკუსია.</p>
+<div class="g">
+<div class="c p"><h3>კურსები</h3><p>სტრუქტურირებული მოდულები დავალებებით.</p></div>
+<div class="c p"><h3>ტრაქტატების ანალიზი</h3><p>აბზაცობრივი კითხვა: „წმინდა გონების კრიტიკა“, „ეთიკა“ და სხვა.</p></div>
+<div class="c p"><h3>ყოველთვიური ვებინარი</h3><p>პირდაპირი დისკუსია, ჩანაწერი ყველა წევრისთვის.</p></div>
+<div class="c p"><h3>სრული ლექსიკონი</h3><p>11 მიმდინარეობის სიღრმისეული განმარტება.</p></div>
+<div class="c p"><h3>აუდიო და PDF</h3><p>ლექციები გზაში და საკითხავი გზამკვლევები.</p></div></div></div></section>
+
+<section id="plans"><div class="w"><h2>გეგმები</h2><p class="lead">ორი მარტივი არჩევანი: დაიწყე უფასოდ ან გახსენი ყველაფერი.</p>
+<div class="g">
+<div class="t"><h3>Free</h3><div class="pr">₾0</div><ul><li>ისტორია და ფილოსოფოსთა ბიოგრაფიები</li><li>ინტერაქტიული რუკა, ქვიზი, დღის ციტატა</li><li>ლექსიკონის 8 ძირითადი ცნება</li></ul><a class="btn o" href="#" data-p="Free">რეგისტრაცია</a></div>
+<div class="t f"><span class="bd">გაშვების ფასი · −53%</span><h3>Member</h3><div class="pr"><s>₾30</s>₾14 <small>/ თვე</small></div><ul><li>ყველაფერი Free-დან</li><li>სრული ლექსიკონი (11 მიმდინარეობა)</li><li>კურსები და აუდიო-ლექციები</li><li>ტრაქტატების Deep-Dive ანალიზი</li><li>ყოველთვიური ვებინარი</li><li>PDF გზამკვლევები და დახურული ფორუმი</li></ul><a class="btn" href="#" data-p="Member">გახდი წევრი</a></div>
+</div></div></section>
+
+<section id="videos"><div class="w"><h2>ვიდეო საუბრები</h2><p class="lead">ფილოსოფოსებისა და მოაზროვნეების ლექციები. ყოველ ვიზიტზე სხვა ვიდეო გამოჩნდება. ვიდეო იტვირთება მხოლოდ დაწკაპუნების შემდეგ, ამიტომ გვერდს არ ანელებს.</p>
+<div class="vd"><div><div class="vp" id="vp"></div><div class="vm" id="vm"></div></div><div class="vl" id="vl"></div></div></div></section>
+<section id="journal"><div class="w"><h2>დღის კითხვა</h2><p class="lead" id="dq"></p>
+<div class="qz"><textarea id="jt" rows="4" placeholder="ჩაწერე შენი ფიქრი..." aria-label="შენი პასუხი"></textarea><button id="js">შენახვა</button><p id="jm" aria-live="polite"></p><p class="sec">ჩანაწერი ინახება მხოლოდ შენს ბრაუზერში და სხვას არ ჩანს.</p></div></div></section>
+<section id="faq"><div class="w"><h2>ხშირად დასმული კითხვები</h2><p class="lead">მოკლე პასუხები იმაზე, რაც ახალ სტუმარს აინტერესებს.</p><div id="fq">
+<details><summary>რა არის „სოფია“?</summary><p>ქართულენოვანი ფილოსოფიის პლატფორმა: ისტორია, მოაზროვნეები, მიმდინარეობები და ინტერაქტიული ხელსაწყოები ერთ ადგილას.</p></details>
+<details><summary>რა არის უფასო?</summary><p>ისტორია, ფილოსოფოსთა ბიოგრაფიები, რუკა, ქვიზი, დღის ციტატა და ლექსიკონის 8 ძირითადი ცნება.</p></details>
+<details><summary>რას იძლევა Premium?</summary><p>სრულ ლექსიკონს, კურსებს, ტრაქტატების ანალიზს, ყოველთვიურ ვებინარს, აუდიოსა და PDF გზამკვლევებს.</p></details>
+<details><summary>როგორ დავრეგისტრირდე?</summary><p>დააჭირე ზედა მენიუში „რეგისტრაციას“, ჩაწერე სახელი და ელფოსტა და აირჩიე გეგმა.</p></details>
+<details><summary>რამდენად სანდოა ციტატები?</summary><p>ისინი გადმოცემითი თარგმანებია. ზუსტი წყაროების დამატებას ეტაპობრივად ვაკეთებთ.</p></details></div></div></section>
+<section id="sitemap"><div class="w"><h2>საიტის რუკა</h2><p class="lead">გვერდები, რომლებიც ამ პროტოტიპიდან შემდეგ ეტაპზე აშენდება.</p>
+<div class="sm">
+<div><b>მთავარი</b><br>Landing, ძებნა, დღის ციტატა</div>
+<div><b>უფასო</b><br>ისტორია · მიმდინარეობები · მოაზროვნეები · ბლოგი · რუკა · ქვიზები</div>
+<div><b>Premium</b><br>კურსები · ტრაქტატები · ვებინარები · აუდიო · PDF</div>
+<div><b>ანგარიში</b><br>პროგრესი · შენახული · გადახდა · ფორუმი</div></div></div></section>
+<div class="w"><footer>© 2026 სოფია. ტექსტები საილუსტრაციოა. რეგისტრაციისას მითითებული ელფოსტა გამოიყენება მხოლოდ სიახლეების გასაგზავნად.</footer></div>
+
+<dialog id="reg"><button class="x" id="rx" aria-label="დახურვა">×</button><h2>რეგისტრაცია</h2><p style="color:var(--mut);font-size:15px;margin:0">შემოგვიერთდი ადრეული წევრების სიაში.</p>
+<form id="rf"><label for="rn">სახელი</label><input id="rn" name="name" required autocomplete="name"><label for="re">ელფოსტა</label><input id="re" name="email" type="email" required autocomplete="email">
+<input type="hidden" id="rp" name="plan" value="Free">
+<label class="ck"><input type="checkbox" required> ვეთანხმები, რომ ჩემი ელფოსტა გამოყენებული იქნება სიახლეების გასაგზავნად.</label>
+<button class="btn" type="submit" style="margin-top:14px;cursor:pointer;font:inherit">რეგისტრაცია</button><div id="rmsg" aria-live="polite"></div></form></dialog>
+<script>
+var N=[
+{n:"სოკრატე",yr:"ძვ.წ. 470–399",x:70,y:60,p:0,t:"კითხვით ეძებდა ჭეშმარიტებას. წერილობითი ნაშრომი არ დაუტოვებია."},
+{n:"პლატონი",yr:"ძვ.წ. 428–348",x:200,y:35,p:0,t:"იდეათა თეორია და აკადემია. სახელმწიფოს შესახებ დიალოგები."},
+{n:"არისტოტელე",yr:"ძვ.წ. 384–322",x:330,y:70,p:1,t:"ლოგიკა და ეთიკა. Deep-Dive: „ნიკომახეს ეთიკა“."},
+{n:"სტოიკოსები",yr:"ძვ.წ. III ს. – II ს.",x:60,y:170,p:0,t:"სიმშვიდე იმაში, რაც ჩვენზეა დამოკიდებული."},
+{n:"კანტი",yr:"1724–1804",x:200,y:150,p:1,t:"გონების საზღვრები და მორალური კანონი. კურსი: 8 მოდული."},
+{n:"ნიცშე",yr:"1844–1900",x:340,y:175,p:0,t:"ღირებულებათა გადააზრება და ცხოვრების დადასტურება."},
+{n:"ეგზისტენციალისტები",yr:"XX ს.",x:110,y:275,p:1,t:"თავისუფლება და პასუხისმგებლობა. ყოველთვიური დისკუსიის თემა."},
+{n:"ვიტგენშტაინი",yr:"1889–1951",x:290,y:275,p:1,t:"ენა და აზრის საზღვრები. აუდიო-ლექცია."}];
+var E=[[0,1],[1,2],[0,3],[1,4],[2,4],[4,5],[3,6],[4,6],[5,6],[5,7],[4,7]];
+var s=document.getElementById("svg"),inf=document.getElementById("info"),NS="http://www.w3.org/2000/svg";
+function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
+E.forEach(function(e){var a=N[e[0]],b=N[e[1]];s.appendChild(el("line",{x1:a.x,y1:a.y,x2:b.x,y2:b.y}))});
+var gn=[];
+function show(i){gn.forEach(function(g,j){g.classList.toggle("on",i==j)});var d=N[i];
+inf.innerHTML="<h3></h3><div class='tag'></div><div></div>";inf.children[0].textContent=d.n;
+inf.children[1].textContent=d.yr+" — "+(d.p?"Premium":"უფასო");inf.children[2].textContent=d.t;var pi=window.P?P.findIndex(function(p){return p[0]==d.n}):-1;if(pi>=0){var bb=document.createElement("button");bb.textContent="ბიოგრაფია →";bb.className="lk";bb.onclick=function(){ob(pi)};inf.appendChild(bb)}}
+N.forEach(function(d,i){var g=el("g",{"class":"nd"+(d.p?" p":""),tabindex:0,role:"button","aria-label":d.n});
+g.appendChild(el("circle",{cx:d.x,cy:d.y,r:16}));var t=el("text",{x:d.x,y:d.y+36});t.textContent=d.n;g.appendChild(t);
+g.onclick=function(){show(i)};g.onkeydown=function(e){if(e.key=="Enter"||e.key==" "){e.preventDefault();show(i)}};
+s.appendChild(g);gn.push(g)});show(0);
+var Q=[["ვიცი, რომ არაფერი ვიცი.","სოკრატე"],["გამოუკვლეველი ცხოვრება ცხოვრების ღირსი არ არის.","სოკრატე (პლატონის მიხედვით)"],["ადამიანი ბუნებით პოლიტიკური არსებაა.","არისტოტელე"],["ბედნიერება ჩვენზეა დამოკიდებული.","არისტოტელე"],["გამოიჩინე გამბედაობა, რომ იხელმძღვანელო საკუთარი გონებით.","კანტი"]];
+var d=Q[Math.floor(Date.now()/864e5)%Q.length];
+document.getElementById("q").innerHTML="";var qq=document.getElementById("q");qq.textContent="„"+d[0]+"“";var sm=document.createElement("small");sm.textContent=d[1];qq.appendChild(sm);
+var r=document.documentElement;document.getElementById("th").onclick=function(){r.dataset.theme=r.dataset.theme=="light"?"dark":"light"};
+var QZ=[{q:"როცა რაღაც შენგან დამოუკიდებლად ირღვევა, რას აკეთებ?",a:[["ვარკვევ, რას ვაკონტროლებ და რას არა",0],["ვიღებ პასუხისმგებლობას და ვირჩევ ახალ გზას",1],["ვეძებ სიმშვიდეს ახლობლებთან",2],["ვამოწმებ, მართლა ისეა თუ არა, როგორც ჩანს",3]]},
+{q:"რა გაძლევს ბედნიერებას?",a:[["სათნოება და თვითკონტროლი",0],["თავისუფლება და ავთენტურობა",1],["მეგობრობა და მარტივი სიამოვნებები",2],["ჭეშმარიტების ძიება, პასუხის გარეშეც",3]]},
+{q:"რა არის ცხოვრების აზრი?",a:[["ბუნებასთან თანხმობით ცხოვრება",0],["აზრს ჩვენ თვითონ ვქმნით",1],["უშიშრობა და სულის სიმშვიდე",2],["დარწმუნებით ვერავინ იტყვის",3]]},
+{q:"მეგობარი რჩევას გთხოვს. რას ეტყვი?",a:[["დაფიქრდი, რაზეა შენი ძალა",0],["აირჩიე და მერე პასუხი აგე",1],["აირჩიე, რაც სიმშვიდეს მოგცემს",2],["რა ინფორმაცია გაკლია?",3]]}],
+QS=["სტოიკოსი","ეგზისტენციალისტი","ეპიკურელი","სკეპტიკოსი"],
+QD=["შენთვის მთავარია შინაგანი სიმტკიცე. ახლოსაა ეპიქტეტე და მარკუს ავრელიუსი.","შენ თავისუფლებას და პასუხისმგებლობას ირჩევ. ახლოსაა სარტრი და კამიუ.","შენთვის ბედნიერება სიმშვიდეა. ახლოსაა ეპიკური და მისი ბაღი.","შენ კითხვა გირჩევნია მზა პასუხს. ახლოსაა პირონი და ჰიუმი."],sc,qi;
+var QX;function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+QZ.push({q:"როგორ ეკიდები წარუმატებლობას?",a:[["გაკვეთილია, ემოციებს კი არ მივცემ ბატონობას",0],["თვითონ ვირჩევ, რა აზრს მივცემ",1],["ვეძებ სიმშვიდეს ახლობლებთან",2],["ვეკითხები, ნამდვილად წარუმატებლობა იყო თუ არა",3]]},
+{q:"რა გიტაცებს უფრო მეტად?",a:[["ჩემი ხასიათის გაწვრთნა",0],["ახალი გზის არჩევა",1],["ჩუმი საღამო მეგობრებთან",2],["ძველი რწმენების გადამოწმება",3]]},
+{q:"როგორ უყურებ სიკვდილს?",a:[["ბუნებრივი პროცესია, მზად უნდა ვიყო",0],["ის ცხოვრებას აზრს აძლევს",1],["არ მეშინია, ის უბრალოდ არარსებობაა",2],["ვერავინ იცის, რას ველით იქ",3]]},
+{q:"რას ფიქრობ სიმდიდრეზე?",a:[["მხოლოდ საშუალებაა, ბედნიერება სათნოებაშია",0],["არჩევანის თავისუფლებას გვაძლევს",1],["ცოტა საკმარისია, თუ სიმშვიდე გაქვს",2],["ხშირად ილუზიაა, რომ გვჭირდება",3]]},
+{q:"როცა ყველა ერთ აზრზეა, შენ რას აკეთებ?",a:[["ვამოწმებ, ჩემს პრინციპებს ეწინააღმდეგება თუ არა",0],["ვირჩევ ისე, როგორც მე მიმაჩნია სწორად",1],["ვერიდები უაზრო კამათს",2],["ვეძებ საპირისპირო არგუმენტებს",3]]},
+{q:"ვინ არის კარგი ადამიანი?",a:[["ვინც ზომიერია და საკუთარ თავს ფლობს",0],["ვინც პასუხისმგებლობას იღებს საკუთარ არჩევანზე",1],["ვინც სხვას ტკივილს არ აყენებს",2],["ვინც იცის, რომ შეიძლება ცდებოდეს",3]]},
+{q:"იდეალური შაბათ-კვირა?",a:[["რუტინა და თვითგანვითარება",0],["სპონტანური მოგზაურობა",1],["წიგნი, ჩაი და მშვიდი ბაღი",2],["დიდი ბიბლიოთეკა და კითხვა",3]]},
+{q:"უსიამოვნო ამბავი მოგივიდა. რას გააკეთებ?",a:[["მშვიდად გავარჩევ, რა არის ჩემს ხელში",0],["გადავწყვეტ და ვიმოქმედებ",1],["დისტანცია შევინარჩუნო და დავისვენო",2],["ჯერ წყაროს გადავამოწმებ",3]]});
+function qs(){sc=[0,0,0,0];qi=0;QX=sh(QZ).slice(0,6).map(function(z){return{q:z.q,a:sh(z.a)}});qr()}
+
+function qr(){var b=document.getElementById("qz"),h=document.createElement("h3");b.innerHTML="";
+if(qi>=QX.length){var m=sc.indexOf(Math.max.apply(null,sc)),p=document.createElement("p"),r=document.createElement("button");h.textContent="შენ ხარ: "+QS[m];p.textContent=QD[m];r.textContent="თავიდან დაწყება";r.onclick=qs;b.append(h,p,r);return}
+h.textContent=(qi+1)+"/"+QX.length+" · "+QX[qi].q;b.appendChild(h);
+QX[qi].a.forEach(function(o){var x=document.createElement("button");x.textContent=o[0];x.onclick=function(){sc[o[1]]++;qi++;qr()};b.appendChild(x)})}
+qs();
+</script><script>
+document.documentElement.classList.add("js");
+var M=[["λόγος","გონება"],["ἀρετή","სათნოება"],["εὐδαιμονία","ბედნიერება"],["ἀταραξία","სიმშვიდე"],["ἀλήθεια","ჭეშმარიტება"],["σοφία","სიბრძნე"],["θαῦμα","გაკვირვება"]].map(function(m){return"<span><b>"+m[0]+"</b> — "+m[1]+"</span>"}).join("");
+document.getElementById("mq").innerHTML=M+M;
+document.querySelectorAll(".fc").forEach(function(f){function t(){f.classList.toggle("f")}f.onclick=t;f.onkeydown=function(e){if(e.key=="Enter"||e.key==" "){e.preventDefault();t()}}});
+var rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+if("IntersectionObserver" in window&&!rm){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".w>h2,.w>.lead,.g>*,.tl>div,.t,.q,.sm>div,.qz").forEach(function(n,i){n.classList.add("rv");n.style.transitionDelay=(i%4)*90+"ms";io.observe(n)})}
+var pg=document.getElementById("pg");addEventListener("scroll",function(){var d=document.documentElement;pg.style.width=100*d.scrollTop/Math.max(1,d.scrollHeight-innerHeight)+"%"},{passive:true});
+(function(){var c=document.getElementById("bg"),x=c.getContext("2d"),L="αβγδεζηθλμξπρσφψω∞".split(""),P=[],S=[],W,H,col,cap=document.getElementById("cap"),raf,last=0,sc0=-1,tk=0;
+function cl(){col=getComputedStyle(document.documentElement).getPropertyValue("--sea").trim()}
+function rs(){W=c.width=innerWidth;H=c.height=innerHeight;cl()}rs();addEventListener("resize",rs);
+new MutationObserver(cl).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+for(var i=0,n=innerWidth<700?12:22;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,l:L[i%L.length],s:20+Math.random()*34});
+for(i=0;i<70;i++)S.push([Math.random(),Math.random()]);
+var ph=(1+Math.sqrt(5))/2,V=[[0,1,ph],[0,-1,ph],[0,1,-ph],[0,-1,-ph],[1,ph,0],[-1,ph,0],[1,-ph,0],[-1,-ph,0],[ph,0,1],[-ph,0,1],[ph,0,-1],[-ph,0,-1]],ED=[],NM=["პლატონი: წესიერი სხეული","ჰერაკლიტე: ყველაფერი მოდინებს","დეკარტი: კოორდინატთა სისტემა"];
+for(var u=0;u<12;u++)for(var w=u+1;w<12;w++){var dd=Math.hypot(V[u][0]-V[w][0],V[u][1]-V[w][1],V[u][2]-V[w][2]);if(dd>1.99&&dd<2.01)ED.push([u,w])}
+function wv(k,t){return Math.max(0,1-Math.abs(t-k-.5)*1.3)}
+function draw(ts){x.clearRect(0,0,W,H);x.fillStyle=x.strokeStyle=col;x.lineWidth=1;var t=ts/1000,e=document.documentElement,k3=3*e.scrollTop/Math.max(1,e.scrollHeight-innerHeight),w0=wv(0,k3),w1=wv(1,k3),w2=wv(2,k3),j,g;
+S.forEach(function(s,k){x.globalAlpha=.15+.2*Math.sin(t+k);x.fillRect(s[0]*W,s[1]*H,1.6,1.6)});
+if(w0>0){var a=t/6,ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(a*.6),sb=Math.sin(a*.6),R=Math.min(W,H)*.2,Q=V.map(function(v){var x1=v[0]*ca+v[2]*sa,z1=-v[0]*sa+v[2]*ca;return[W*.74+x1*R,H*.42+(v[1]*cb-z1*sb)*R]});
+x.globalAlpha=.22*w0;x.beginPath();ED.forEach(function(q){x.moveTo(Q[q[0]][0],Q[q[0]][1]);x.lineTo(Q[q[1]][0],Q[q[1]][1])});x.stroke();Q.forEach(function(q){x.beginPath();x.arc(q[0],q[1],2.2,0,7);x.fill()})}
+if(w1>0){x.globalAlpha=.22*w1;for(j=0;j<7;j++){x.beginPath();for(var xx=0;xx<=W;xx+=24){var yy=H*(.18+j*.11)+Math.sin(xx/120+t*.8+j)*(14+j*2);xx?x.lineTo(xx,yy):x.moveTo(xx,yy)}x.stroke()}}
+if(w2>0){var cx=W*.72,cy=H*.48;x.globalAlpha=.07*w2;x.beginPath();for(g=-12;g<=12;g++){x.moveTo(cx+g*60,0);x.lineTo(cx+g*60,H);x.moveTo(0,cy+g*60);x.lineTo(W,cy+g*60)}x.stroke();
+x.globalAlpha=.35*w2;x.beginPath();x.moveTo(cx,0);x.lineTo(cx,H);x.moveTo(0,cy);x.lineTo(W,cy);x.stroke();
+x.beginPath();for(g=-5;g<=5;g+=.25){var px=cx+g*50,py=cy+150-g*g*14;g<-4.9?x.moveTo(px,py):x.lineTo(px,py)}x.stroke();var m=Math.sin(t*.7)*5;x.beginPath();x.arc(cx+m*50,cy+150-m*m*14,4,0,7);x.fill()}
+P.forEach(function(p,i){if(!rm){p.x+=p.vx;p.y+=p.vy;if(p.x<-40)p.x=W+40;if(p.x>W+40)p.x=-40;if(p.y<-40)p.y=H+40;if(p.y>H+40)p.y=-40}x.globalAlpha=.08;x.font=p.s+"px serif";x.fillText(p.l,p.x,p.y);
+for(var j=i+1;j<P.length;j++){var q=P[j],dx=p.x-q.x,dy=p.y-q.y,r2=dx*dx+dy*dy;if(r2<24000){x.globalAlpha=.09*(1-r2/24000);x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}});
+var id=k3<1?0:k3<2?1:2;if(id!=sc0){sc0=id;if(cap)cap.textContent=NM[id]}}
+function loop(ts){raf=requestAnimationFrame(loop);if(ts-last<32)return;last=ts;draw(ts)}
+if(rm){draw(0);addEventListener("scroll",function(){draw(0)},{passive:true})}else raf=requestAnimationFrame(loop);
+document.addEventListener("visibilitychange",function(){if(rm)return;if(document.hidden)cancelAnimationFrame(raf);else raf=requestAnimationFrame(loop)});
+addEventListener("scroll",function(){if(tk)return;tk=requestAnimationFrame(function(){tk=0;var y=scrollY;if(y<1200)document.documentElement.style.setProperty("--sy",y)})},{passive:true});
+})();
+</script><script>
+var P=[["ჰერაკლიტე","ძვ.წ. ~540–480",0,"ცვალებადობა","სამყარო მუდმივ ცვლილებაშია.","ერთ მდინარეში ორჯერ ვერ შეხვალ."],
+["სოკრატე","ძვ.წ. 470–399",0,"ეთიკა, დიალოგი","ჭეშმარიტებას კითხვებით ეძებდა.","გამოუკვლეველი ცხოვრება ცხოვრების ღირსი არ არის."],
+["პლატონი","ძვ.წ. 428–348",0,"იდეალიზმი","ნამდვილი რეალობა იდეათა სამყაროშია.","გაკვირვება ფილოსოფოსის თვისებაა."],
+["არისტოტელე","ძვ.წ. 384–322",0,"ლოგიკა, ეთიკა","სათნოება ჩვევით ყალიბდება.","ადამიანი ბუნებით პოლიტიკური არსებაა."],
+["ეპიქტეტე","~50–135",0,"სტოიციზმი","გაარჩიე, რა არის შენს ხელში და რა არა.","ადამიანებს საგნები კი არა, მათ შესახებ შეხედულებები აწუხებთ."],
+["მარკუს ავრელიუსი","121–180",0,"სტოიციზმი","სიმშვიდე გონების დისციპლინაა.","შენი ცხოვრება შენი ფიქრებით იღებს ფერს."],
+["დეკარტი","1596–1650",1,"რაციონალიზმი","ყველაფერში ეჭვი, ფიქრის გარდა.","ვფიქრობ, მაშასადამე ვარსებობ."],
+["ჰიუმი","1711–1776",1,"ემპირიზმი, სკეპტიციზმი","ცოდნა გამოცდილებიდან მოდის.","გონება ვნებების მონაა."],
+["კანტი","1724–1804",1,"კრიტიკული ფილოსოფია","გონებას საზღვრები აქვს.","გაბედე იცოდე."],
+["ნიცშე","1844–1900",2,"ღირებულებათა კრიტიკა","დაუფიქრებლად მიღებული ღირებულებები უნდა გადავიაზროთ.","ვინც იცის, რისთვის ცხოვრობს, თითქმის ნებისმიერ „როგორს“ გაუძლებს."],
+["ვიტგენშტაინი","1889–1951",2,"ანალიტიკური ფილოსოფია","ბევრი ფილოსოფიური პრობლემა ენის გაუგებრობაა.","რაზეც ვერ ვლაპარაკობთ, ამაზე უნდა დავდუმდეთ."],
+["სარტრი","1905–1980",2,"ეგზისტენციალიზმი","არსებობა არსს წინ უსწრებს.","ადამიანი თავისუფლებისთვისაა განწირული."],
+["კამიუ","1913–1960",2,"აბსურდიზმი","სამყარო უაზროა, მაგრამ ცხოვრება მაინც გრძელდება.","სიზიფე ბედნიერად უნდა წარმოვიდგინოთ."]],
+G=[["რაციონალიზმი","ცოდნის მთავარ წყაროდ გონებას თვლის. დეკარტი, სპინოზა."],
+["ემპირიზმი","ცოდნა გრძნობადი გამოცდილებიდან მოდის. ლოკი, ჰიუმი."],
+["იდეალიზმი","რეალობის საფუძველი იდეა ან გონებაა. პლატონი, ჰეგელი."],
+["მატერიალიზმი","ყველაფერი მატერიაა, გონებაც მისი შედეგია. დემოკრიტე, მარქსი."],
+["სტოიციზმი","სიმშვიდე იმის მიღებაშია, რაც ჩვენზე არ არის დამოკიდებული. ეპიქტეტე, მარკუს ავრელიუსი."],
+["ეპიკურეიზმი","ბედნიერება ტკივილისა და შფოთვის არარსებობაა: მარტივი სიამოვნება და მეგობრობა."],
+["სკეპტიციზმი","ეჭვი იმაზე, რომ რაიმეს დარწმუნებით ვიცით. პირონი, ჰიუმი."],
+["უტილიტარიზმი","სწორია ის, რაც ყველაზე მეტ ადამიანს მეტ სიკეთეს მოუტანს. ბენთამი, მილი."],
+["დეონტოლოგია","ქმედება სწორია პრინციპით და მოვალეობით, შედეგის მიუხედავად. კანტი."],
+["ეგზისტენციალიზმი","ადამიანი თავად ქმნის თავის არსს არჩევანით. კირკეგორი, სარტრი."],
+["აბსურდიზმი","სამყარო უაზროა, ადამიანი კი აზრს მაინც ეძებს. კამიუ."],
+["ნიჰილიზმი","რწმენა, რომ ცხოვრებას თავისთავად აზრი ან ღირებულება არ აქვს."],
+["პრაგმატიზმი","აზრის ჭეშმარიტება მისი პრაქტიკული შედეგით მოწმდება. პირსი, ჯეიმსი."],
+["პოზიტივიზმი","ნამდვილია მხოლოდ დაკვირვებით და გამოცდილებით შემოწმებადი ცოდნა. კონტი."],
+["ფენომენოლოგია","შეისწავლის, როგორ გვევლინება გამოცდილება ცნობიერებაში. ჰუსერლი."],
+["ონტოლოგია","მოძღვრება არსებულის შესახებ: რა არსებობს."],
+["ეპისტემოლოგია","მოძღვრება ცოდნის შესახებ: რა და როგორ შეგვიძლია ვიცოდეთ."],
+["დიალექტიკა","აზრების დაპირისპირებით და გადალახვით განვითარება. სოკრატე, ჰეგელი."],
+["აპრიორი","ცოდნა, რომელიც გამოცდილებამდე და მისგან დამოუკიდებლად გვაქვს. კანტი."]];
+function mk(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+var pp=document.getElementById("pp"),ch=document.getElementById("ch"),gl=document.getElementById("gl"),gs=document.getElementById("gs");
+function rp(f){pp.innerHTML="";P.forEach(function(p,pi){if(f&&p[2]+1!=f)return;var c=mk("div","pc");c.append(mk("h3","",p[0]),mk("small","",p[1]+" · "+p[3]),mk("p","",p[4]),mk("div","qt","„"+p[5]+"“"),mk("div","more","ბიოგრაფია →"));c.tabIndex=0;c.setAttribute("role","button");c.style.cursor="pointer";c.onclick=function(){ob(pi)};c.onkeydown=function(e){if(e.key=="Enter"||e.key==" "){e.preventDefault();ob(pi)}};pp.appendChild(c)})}
+["ყველა","ანტიკური","ახალი დრო","თანამედროვე"].forEach(function(n,i){var b=mk("button","",n);if(!i)b.className="on";b.onclick=function(){[].forEach.call(ch.children,function(x){x.classList.remove("on")});b.classList.add("on");rp(i)};ch.appendChild(b)});rp(0);
+var LK={"სკეპტიციზმი":1,"უტილიტარიზმი":1,"დეონტოლოგია":1,"ეგზისტენციალიზმი":1,"აბსურდიზმი":1,"ნიჰილიზმი":1,"პრაგმატიზმი":1,"პოზიტივიზმი":1,"ფენომენოლოგია":1,"დიალექტიკა":1,"აპრიორი":1};function rg(q){gl.innerHTML="";G.forEach(function(g){var lk=LK[g[0]];if(q&&(g[0]+(lk?"":" "+g[1])).toLowerCase().indexOf(q)<0)return;var d=mk("details");d.append(mk("summary","",(lk?"🔒 ":"")+g[0]),mk("p","",lk?"სიღრმისეული განმარტება და მაგალითები Premium წევრებისთვისაა.":g[1]));if(lk){var b=mk("button","btn o","გახდი წევრი");b.style.cssText="cursor:pointer;font:inherit;margin-top:8px";b.onclick=function(){openMember()};d.appendChild(b)}gl.appendChild(d)});if(!gl.children.length)gl.appendChild(mk("p","","ვერაფერი მოიძებნა."))}
+gs.oninput=function(){rg(gs.value.trim().toLowerCase())};rg("");
+var qq=document.getElementById("q");function sq(i){var p=P[i];qq.textContent="„"+p[5]+"“";qq.appendChild(mk("small","",p[0]))}
+sq(Math.floor(Date.now()/864e5)%P.length);
+var nb=mk("button","btn o","სხვა ციტატა");nb.style.cssText="cursor:pointer;font:inherit;margin-top:18px";nb.onclick=function(){sq(Math.floor(Math.random()*P.length))};qq.parentNode.appendChild(nb);
+var FORM_URL=""; // ჩასვი Formspree მისამართი, მაგ.: https://formspree.io/f/xxxxxxx
+var reg=document.getElementById("reg"),rf=document.getElementById("rf"),rmsg=document.getElementById("rmsg");
+document.querySelectorAll("[data-p]").forEach(function(a){a.onclick=function(e){e.preventDefault();if(a.dataset.p=="Member"){openMember();return}document.getElementById("rp").value="Free";rmsg.textContent="";reg.showModal()}});
+document.getElementById("rx").onclick=function(){reg.close()};reg.onclick=function(e){if(e.target==reg)reg.close()};
+rf.onsubmit=function(e){e.preventDefault();if(!FORM_URL){rmsg.textContent="დემო რეჟიმი: მონაცემები ჯერ არსად ინახება. ფორმის დასაკავშირებლად საჭიროა მისამართი.";return}
+fetch(FORM_URL,{method:"POST",headers:{Accept:"application/json"},body:new FormData(rf)}).then(function(r){rmsg.textContent=r.ok?"მადლობა! რეგისტრაცია მიღებულია.":"ვერ გაიგზავნა, სცადე ხელახლა.";if(r.ok)rf.reset()}).catch(function(){rmsg.textContent="კავშირის შეცდომა."})};
+</script><dialog id="bio"><button class="x" id="bx" aria-label="დახურვა">×</button><div id="bc"></div></dialog>
+<script>
+var BI=[["ეფესოელი ფილოსოფოსი, რომელსაც „ბნელს“ უწოდებდნენ მისი გამონათქვამების გამო. მისი ნაწერებიდან მხოლოდ ფრაგმენტები შემორჩა.", "ყველაფერი მუდმივად იცვლება; წინააღმდეგობათა ერთიანობა; ლოგოსი როგორც სამყაროს წესრიგი", "ფრაგმენტები (ბუნების შესახებ)"], ["ათენელი, რომელიც ქუჩაში საუბრებით ეძებდა სიბრძნეს და არაფერი დაუწერია. 399 წელს ათენის სასამართლომ სიკვდილი მიუსაჯა.", "კითხვით ძიება; სათნოება ცოდნაა; საკუთარი უმეცრების გაცნობიერება", "პლატონის დიალოგები: „აპოლოგია“; „კრიტონი“"], ["სოკრატეს მოწაფე. ათენში დააარსა აკადემია, დასავლეთის ერთ-ერთი პირველი სასწავლებელი.", "იდეათა სამყარო; სული და სხეული; იდეალური სახელმწიფო", "„სახელმწიფო“; „სიმპოზიუმი“; „ტიმეოსი“"], ["პლატონის მოწაფე, ალექსანდრე მაკედონელის მასწავლებელი და ლიკეუმის დამფუძნებელი.", "ფორმალური ლოგიკა; ბედნიერება სათნოებით ცხოვრებაა; ოქროს შუალედი", "„ნიკომახეს ეთიკა“; „პოლიტიკა“; „მეტაფიზიკა“"], ["ყოფილი მონა, რომელიც სტოიკოსი მასწავლებელი გახდა. მისი სიტყვები მოწაფემ არიანემ ჩაიწერა.", "გაარჩიე, რა არის შენს ხელში და რა არა; შეხედულებები განსაზღვრავს განცდებს; ბედის მიღება", "„სახელმძღვანელო“; „საუბრები“"], ["რომის იმპერატორი და სტოიკოსი, რომელიც სამხედრო ლაშქრობებშიც პირად ჩანაწერებს აკეთებდა.", "სიმშვიდე გონების დისციპლინაა; ცხოვრების წარმავლობა; მოვალეობა საზოგადოების წინაშე", "„საკუთარ თავს“"], ["ფრანგი მათემატიკოსი და ფილოსოფოსი, ახალი დროის ფილოსოფიის ერთ-ერთი ფუძემდებელი.", "მეთოდური ეჭვი; „ვფიქრობ, მაშასადამე ვარსებობ“; გონებისა და სხეულის დუალიზმი", "„მეთოდის შესახებ ახსნა“; „ფიქრები პირველ ფილოსოფიაზე“"], ["შოტლანდიელი ფილოსოფოსი და ისტორიკოსი, ემპირიზმისა და სკეპტიციზმის მთავარი წარმომადგენელი.", "ცოდნა გამოცდილებიდან მოდის; მიზეზობრიობის კრიტიკა; გრძნობები მორალის საფუძველია", "„ბუნების ტრაქტატი“; „გამოკვლევა ადამიანის გონების შესახებ“"], ["კიონიგსბერგელი პროფესორი, რომელიც თითქმის არასდროს გასულა თავისი ქალაქიდან და ფილოსოფიაში „კოპერნიკული გადატრიალება“ მოახდინა.", "გონების საზღვრები; კატეგორიული იმპერატივი; აპრიორული ცოდნა", "„წმინდა გონების კრიტიკა“; „პრაქტიკული გონების კრიტიკა“"], ["გერმანელი ფილოსოფოსი და ფილოლოგი. ბოლო წლები ავადმყოფობით გაატარა.", "ღირებულებათა გადააზრება; ზეკაცი; მარადიული დაბრუნება", "„ასე ბრძანა ზარატუსტრამ“; „მორალის გენეალოგია“"], ["ავსტრიელი ფილოსოფოსი, რომელმაც ენის ფილოსოფიაში ორი განსხვავებული მიდგომა შექმნა: ადრეული და გვიანდელი.", "ენის საზღვრები სამყაროს საზღვრებია; ენობრივი თამაშები; ფილოსოფიური პრობლემები გაუგებრობაა", "„ლოგიკურ-ფილოსოფიური ტრაქტატი“; „ფილოსოფიური გამოკვლევები“"], ["ფრანგი ფილოსოფოსი და მწერალი, ეგზისტენციალიზმის ყველაზე ცნობილი სახე. ნობელის პრემია უარყო.", "არსებობა წინ უსწრებს არსს; თავისუფლება და პასუხისმგებლობა; „ცუდი რწმენა“", "„ყოფიერება და არარაობა“; „გულისრევა“"], ["ალჟირში დაბადებული ფრანგი მწერალი და ფილოსოფოსი, 1957 წელს ნობელის პრემიის ლაურეატი.", "აბსურდი; ამბოხი; აზრის ძიება უპასუხო სამყაროში", "„სიზიფეს მითი“; „უცხო“"]];
+var GL=["∿","?","Φ","Α","Ε","M","∃","Η","∀","∞","λ","Σ","○"],HU=[200,35,265,150,170,45,215,190,240,0,110,300,25];var PH={}; // ფოტოს დასამატებლად: PH[1]="სურათის მისამართი"; (ფილოსოფოსის ნომერი სიაში, 0-დან)
+var bioD=document.getElementById("bio");document.getElementById("bx").onclick=function(){bioD.close()};bioD.onclick=function(e){if(e.target==bioD)bioD.close()};
+</script>
+<dialog id="pay"><button class="x" id="px" aria-label="დახურვა">×</button><h2>გახდი წევრი</h2>
+<div class="pp"><span class="old">₾30</span><b>₾14</b><small>/ თვე</small><em>−53%</em></div>
+<ul><li>სრული ლექსიკონი და კურსები</li><li>ტრაქტატების ანალიზი და ყოველთვიური ვებინარი</li><li>აუდიო-ლექციები, PDF გზამკვლევები, დახურული ფორუმი</li></ul>
+<form id="pf"><input type="hidden" name="plan" value="Member"><label for="pn">სახელი</label><input id="pn" name="name" required autocomplete="name"><label for="pe">ელფოსტა</label><input id="pe" name="email" type="email" required autocomplete="email">
+<label class="ck"><input type="checkbox" required> ვეთანხმები პირობებს და ვაცნობიერებ, რომ გადახდა მოხდება გადახდის პარტნიორის უსაფრთხო გვერდზე.</label>
+<button class="btn" type="submit" style="margin-top:14px;cursor:pointer;font:inherit">გადახდა ₾14</button><div id="pmsg" aria-live="polite" style="margin-top:12px;font-size:14px;color:var(--ver)"></div></form>
+<p class="sec">🔒 ბარათის მონაცემებს საიტი არ ინახავს.</p></dialog>
+<script>
+var PAY_URL=""; // ჩასვი გადახდის ბმული (payment link)
+var payD=document.getElementById("pay"),pf=document.getElementById("pf"),pmsg=document.getElementById("pmsg");
+function openMember(){var b=document.getElementById("bio");if(b.open)b.close();pmsg.textContent="";payD.showModal()}
+document.getElementById("px").onclick=function(){payD.close()};payD.onclick=function(e){if(e.target==payD)payD.close()};
+pf.onsubmit=function(e){e.preventDefault();if(!PAY_URL){pmsg.textContent="გადახდის სისტემა ჯერ არ არის დაკავშირებული (დემო რეჟიმი). ბარათით გადახდა მალე ჩაირთვება.";return}
+var go=function(){location.href=PAY_URL};if(typeof FORM_URL!="undefined"&&FORM_URL){fetch(FORM_URL,{method:"POST",headers:{Accept:"application/json"},body:new FormData(pf)}).then(go,go)}else go()};
+</script>
+<script>
+var VD=[["kBdfcR-8hEY", "სამართლიანობა: რა არის სწორი? ეპიზოდი 1 — მკვლელობის მორალური მხარე", "მაიკლ სენდელი · ჰარვარდი"], ["1RWOpQXTltA", "პლატონის გამოქვაბულის ალეგორია", "ალექს გენდლერი · TED-Ed"], ["R9OCA6UFE-0", "სტოიციზმის ფილოსოფია", "მასიმო პილიუჩი · TED-Ed"], ["Yhn1Fe8cT0Q", "სტოიციზმი ჩვეულებრივი ცხოვრებისთვის", "მასიმო პილიუჩი · TEDxAthens"]],vc=Math.floor(Math.random()*VD.length);
+function vr(){var v=VD[vc],p=document.getElementById("vp"),m=document.getElementById("vm"),l=document.getElementById("vl");p.innerHTML="";m.innerHTML="";l.innerHTML="";
+var im=mk("img");im.src="https://i.ytimg.com/vi/"+v[0]+"/hqdefault.jpg";im.alt=v[1];im.loading="lazy";var b=mk("button","","▶");b.setAttribute("aria-label","ვიდეოს ჩართვა");
+b.onclick=function(){var f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+v[0]+"?autoplay=1&rel=0";f.title=v[1];f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;p.innerHTML="";p.appendChild(f)};p.append(im,b);
+var a=mk("a","","გახსენი YouTube-ზე ↗");a.href="https://www.youtube.com/watch?v="+v[0];a.target="_blank";a.rel="noopener";m.append(mk("h3","",v[1]),mk("small","",v[2]),document.createElement("br"),a);
+VD.forEach(function(x,i){var it=mk("button","vi"+(i==vc?" on":"")),t=mk("img"),d=mk("div");t.src="https://i.ytimg.com/vi/"+x[0]+"/mqdefault.jpg";t.alt="";t.loading="lazy";d.append(mk("span","",x[1]),mk("small","",x[2]));it.append(t,d);it.onclick=function(){vc=i;vr()};l.appendChild(it)})}
+vr();
+var TE=[["თესევსის ხომალდი", "ათენელებმა ძველ ხომალდს დაფები სათითაოდ შეუცვალეს, სანამ ყველა ახალი არ გახდა. იგივე ხომალდია?", [["დიახ, იგივეა", "შენთვის იდენტობა ფორმასა და უწყვეტობაშია, არა მასალაში. ეს არისტოტელეს ფორმის იდეას ახლოსაა."], ["არა, სხვაა", "შენთვის იდენტობა მასალაზეა დამოკიდებული. მაშინ ჩვენც სხვა ვართ, რადგან სხეულის უჯრედები მუდმივად იცვლება."]]], ["ტროლეის დილემა", "მატარებელი ხუთ ადამიანს მიექანება. ბერკეტით შეგიძლია მიმართულება შეცვალო, მაგრამ მეორე გზაზე ერთი ადამიანია. შეცვლი?", [["დიახ, შევცვლი", "უტილიტარისტული მიდგომა: ერთი სიცოცხლე ხუთზე ნაკლებია. კანტი კი ამბობდა, რომ ადამიანი მხოლოდ საშუალება არ უნდა იყოს."], ["არა, არ შევცვლი", "დეონტოლოგიური მიდგომა: აქტიურად ვინმეს სიკვდილის მიზეზი არ უნდა გახდე. კრიტიკოსები კი ეკითხებიან, უმოქმედობაც ხომ არჩევანია?"]]], ["გამოქვაბული", "მთელი ცხოვრება მხოლოდ კედელზე აჩრდილებს ხედავდი. ერთხელ გარეთ გაგიყვანეს და სინათლე დაინახე. დაბრუნდებოდი და სხვებს ეტყოდი?", [["დიახ, ვეტყოდი", "პლატონისთვის ფილოსოფოსის მოვალეობაა სხვასაც გაუზიაროს ჭეშმარიტება, თუნდაც არ დაუჯერონ."], ["არა, დავრჩებოდი", "ეს ნიშნავს, რომ ცოდნა შენთვის პირადი სიმშვიდეა. პლატონი ამას უარყოფდა, ეპიკურელი კი გაგიგებდა."]]], ["გამოცდილების მანქანა", "მანქანა სრულ ბედნიერ ცხოვრებას გაგრძნობინებს, მაგრამ ყველაფერი სიმულაცია იქნება. შეუერთდებოდი?", [["დიახ", "ჰედონისტისთვის მთავარია განცდა. ნოზიკის არგუმენტი კი იმას ამბობს, რომ ჩვენ რეალობაც გვინდა და არა მხოლოდ სიამოვნება."], ["არა", "ეს ნიშნავს, რომ ბედნიერებაზე მეტად რეალური ცხოვრება გინდა. ნოზიკი სწორედ ამას გულისხმობდა."]]]],ti=Math.floor(Math.random()*TE.length);
+function te(){var e=TE[ti],eb=document.getElementById("eb"),o=mk("p");document.getElementById("eh").textContent="ფიქრის ექსპერიმენტი: "+e[0];document.getElementById("eq").textContent=e[1];eb.innerHTML="";
+e[2].forEach(function(x){var b=mk("button","",x[0]);b.onclick=function(){o.textContent=x[1]};eb.appendChild(b)});o.setAttribute("aria-live","polite");eb.appendChild(o);
+var n=mk("button","","შემდეგი ექსპერიმენტი →");n.onclick=function(){ti=(ti+1)%TE.length;te()};eb.appendChild(n)}
+te();
+var DQ=[["რას გააკეთებდი დღეს, ცხოვრება მარადიულად რომ მეორდებოდეს?", "ნიცშე"], ["რა არის დღეს შენს ხელში და რა არა?", "სტოიკოსები"], ["რა სიკეთე გააკეთე დღეს იმიტომ, რომ გინდოდა და არა იმიტომ, რომ მოგეთხოვებოდა?", "კანტი"], ["რა გინდა სინამდვილეში და რა უბრალოდ სხვების მოლოდინია?", "ეგზისტენციალისტები"], ["რაში იყავი დარწმუნებული, მაგრამ მერე აზრი შეიცვალე?", "სოკრატე"], ["რომელი პატარა სიამოვნება გიბრუნებს დღეს სიმშვიდეს?", "ეპიკური"], ["რა გაგაკვირვა დღეს?", "პლატონი: გაკვირვება ფილოსოფიის დასაწყისია"]],dq=DQ[Math.floor(Date.now()/864e5)%DQ.length],jk="sophia:j:"+new Date().toISOString().slice(0,10),jt=document.getElementById("jt"),jm=document.getElementById("jm");
+document.getElementById("dq").textContent=dq[0]+" ("+dq[1]+")";
+try{jt.value=localStorage.getItem(jk)||""}catch(e){}
+document.getElementById("js").onclick=function(){try{localStorage.setItem(jk,jt.value);jm.textContent="შენახულია ✓"}catch(e){jm.textContent="ვერ შეინახა"}};
+</script>
+<script>
+var DP={"1": {"l": ["სოკრატე ათენში, აგორაზე ესაუბრებოდა ხელოვანებს, პოლიტიკოსებსა და ხელოსნებს და კითხვებით ამოწმებდა მათ დარწმუნებულობას. დელფოს ორაკულის გადმოცემით ყველაზე ბრძენი ის იყო, რადგან მხოლოდ მან იცოდა თავისი უმეცრების ზღვარი.", "399 წელს ახალგაზრდების გახრწნისა და ღმერთებისადმი უპატივცემულობის ბრალდებით გაასამართლეს. მან მიდგომაზე უარი არ თქვა და შხამი დალია. ეს არის პირველი დიდი მაგალითი, როცა ფილოსოფიური პოზიცია სიცოცხლეზე მნიშვნელოვანი გახდა."], "x": [["მეტაფიზიკა", "პლატონმა სოკრატეს კითხვები იდეათა თეორიად გადააქცია: თუ ვიცით, რა არის სამართლიანობა, რაღაც უნდა არსებობდეს, რასაც ვიცნობთ."], ["ფსიქოლოგია", "სოკრატესეული კითხვა დღეს კოგნიტურ-ქცევით თერაპიაში გამოიყენება: თერაპევტი კითხვებით ეხმარება ადამიანს საკუთარი რწმენების გადამოწმებაში."], ["მეცნიერება", "კარლ პოპერის აზრით, მეცნიერული შეხედულება უნდა იყოს გადამოწმებადი და მზად იყოს ცდომილების აღიარებისთვის. ეს სოკრატესეულ დამოკიდებულებას ახლოსაა."]], "r": "რაში ხარ დარწმუნებული ისე, რომ არასდროს გადაგიმოწმებია?"}, "3": {"l": ["არისტოტელე პლატონის აკადემიაში ოცი წელი სწავლობდა, მაგრამ მასწავლებელს იდეათა სამყაროში არ გაჰყვა: მისთვის ფორმა საგანშივე არსებობს და არა მის გარეთ. ამ მიდგომამ ლოგიკა, ბიოლოგია და ეთიკა ცალკე დისციპლინებად ჩამოაყალიბა.", "მისი ეთიკის ცენტრში ბედნიერება (ევდემონია) დგას: სათნოებით ცხოვრება, რომელიც ჩვევით ყალიბდება. სათნოება ორ უკიდურესობას შორის შუალედია, მაგალითად გამბედაობა სიმხდალესა და უგუნურ თავხედობას შორის."], "x": [["მეტაფიზიკა", "თომა აქვინელმა არისტოტელეს ფორმისა და მატერიის სქემა ქრისტიანულ თეოლოგიას მიუსადაგა და სქოლასტიკის საფუძველი შექმნა."], ["მეცნიერება", "არისტოტელე ბიოლოგიის ერთ-ერთი პირველი სისტემატიკოსი იყო. მისი ფიზიკა მოგვიანებით გალილეიმ და ნიუტონმა შეცვალეს."], ["ფსიქოლოგია", "პოზიტიური ფსიქოლოგია, მაგალითად მარტინ სელიგმანთან, ბედნიერებას არისტოტელესებურად, ძლიერი მხარეებისა და აზრიანი ცხოვრების გზით განიხილავს."]], "r": "რომელი სათნოება გაკლია და რა იქნებოდა მისი შუალედი?"}, "6": {"l": ["დეკარტმა სკოლაში ნასწავლი ყველა ცოდნა ეჭვქვეშ დააყენა და მოძებნა ერთი რამ, რაშიც ეჭვი შეუძლებელია: როცა ვეჭვობ, ვფიქრობ და ამიტომ ვარსებობ. აქედან ახალი დროის ფილოსოფია იწყება.", "ის ამტკიცებდა, რომ გონება და სხეული განსხვავებული ნივთიერებებია. მაშინვე ჩნდება კითხვა, როგორ მოქმედებს არამატერიალური აზრი მატერიალურ სხეულზე. ეს „გონება-სხეულის პრობლემა“ დღემდე გადაუჭრელია."], "x": [["მეტაფიზიკა", "სპინოზამ დუალიზმი უარყო: გონება და სხეული ერთი ბუნების ორი გამოხატულებაა. გილბერტ რაილმა შემდეგ დეკარტის მოდელს „მოჩვენება მანქანაში“ უწოდა."], ["მეცნიერება", "ნეირომეცნიერმა ანტონიო დამასიომ წიგნში „დეკარტის შეცდომა“ აჩვენა, რომ ემოცია და სხეული გონივრული გადაწყვეტილების ნაწილია."], ["ცნობიერება", "დევიდ ჩალმერსმა „ცნობიერების რთული პრობლემა“ ჩამოაყალიბა: ტვინის მუშაობის ახსნა ვერ გვეუბნება, რატომ აქვს ამ მუშაობას განცდის სახე."]], "r": "შენი აზრი რას ემყარება: ტვინს, გამოცდილებას თუ ორივეს?"}, "8": {"l": ["კანტი ამბობდა, რომ ჰიუმის კითხვამ „დოგმატური ძილიდან“ გააღვიძა. მან დაასკვნა, რომ გონება მხოლოდ მიღებულ ინფორმაციას კი არ ასახავს, არამედ საკუთარი ფორმებით აწესრიგებს მას: სივრცით, დროითა და მიზეზობრიობით.", "მორალშიც ამავე მიდგომას მიჰყვა: ქმედება სწორია, თუ მისი პრინციპი ყველასთვის კანონად გამოდგება (კატეგორიული იმპერატივი), და ადამიანი არასდროს უნდა გამოიყენო მხოლოდ საშუალებად."], "x": [["მეცნიერება", "კანტმა 1755 წელს მზის სისტემის წარმოშობის შესახებ ნისლეულის ჰიპოთეზა წამოაყენა, რომელიც მოგვიანებით ლაპლასმა განავითარა."], ["ფსიქოლოგია", "ჟან პიაჟე ბავშვებში იკვლევდა, როგორ ყალიბდება სივრცის, დროისა და მიზეზობრიობის ცნებები. ეს კანტისეული კატეგორიების განვითარებით შესწავლას ახლოსაა."], ["მეტაფიზიკა", "შოპენჰაუერმა კანტის „საგანი თავისთავად“ ნებად გამოაცხადა, ჰეგელმა კი კანტისეული საზღვრები ისტორიულ განვითარებად გაშალა."]], "r": "რას დაინახავდი სამყაროში, შენი გონების ფორმების გარეშე?"}, "9": {"l": ["ნიცშე თვლიდა, რომ ევროპული ზნეობა რწმენაზე იყო აგებული, რომელიც უკვე იკარგებოდა. „ღმერთი მოკვდა“ ამ კრიზისის დიაგნოზია და არა ზეიმი: ახლა ადამიანმა თავად უნდა შექმნას ღირებულებები.", "მისი ცნებები, ზეკაცი, ძალაუფლების ნება და მარადიული დაბრუნება, ხშირად არასწორად გაიგეს. მარადიული დაბრუნება ცხოვრების გამოცდაა: მოისურვებდი თუ არა ამ ცხოვრების უსასრულოდ განმეორებას?"], "x": [["ფსიქოლოგია", "ვიქტორ ფრანკლი წიგნში „ადამიანის ძიება აზრისთვის“ ნიცშეს სიტყვებს იმოწმებს, რომ ვისაც აქვს „რატომ“, თითქმის ნებისმიერ „როგორს“ გაუძლებს. კარლ გუსტავ იუნგმა ზარატუსტრაზე სემინარები გამართა."], ["მეტაფიზიკა", "ჰაიდეგერმა ნიცშეზე ლექციების კურსი წაიკითხა და მას დასავლური მეტაფიზიკის დასრულებად მიიჩნევდა. სარტრისა და კამიუსთვის ნიცშე ეგზისტენციალიზმის წინაპარია."], ["მეცნიერება", "ნიცშე დარვინიზმს კრიტიკულად უყურებდა: ძალაუფლების ნება მისთვის მხოლოდ გადარჩენისთვის ბრძოლა არ იყო."]], "r": "ვისურვებდი თუ არა, რომ ეს დღე უსასრულოდ განმეორებულიყო?"}},LN=[["ადრეული იონიელები", "სტოიკოსები; პლატონი; ჰეგელი; ნიცშე"], ["სოფისტებთან დაპირისპირება", "პლატონი; ქსენოფონტე; კინიკოსები; სტოიკოსები"], ["სოკრატე; პითაგორელები; პარმენიდე", "არისტოტელე; ნეოპლატონიზმი; ავგუსტინე; იოანე პეტრიწი"], ["პლატონი", "თომა აქვინელი; იბნ სინა; იბნ რუშდი; სქოლასტიკა"], ["სოკრატე; სტოიკოსები", "მარკუს ავრელიუსი; კოგნიტური თერაპია"], ["ეპიქტეტე; სენეკა", "თანამედროვე სტოიციზმი; კოგნიტური თერაპია"], ["ავგუსტინე; სქოლასტიკა; სკეპტიციზმი", "სპინოზა; ლაიბნიცი; ლოკი; კანტი"], ["ლოკი; ბერკლი", "კანტი; ეინშტაინი; ემპირიზმი"], ["ჰიუმი; დეკარტი; ლაიბნიცი; რუსო", "ჰეგელი; შოპენჰაუერი; ჰუსერლი"], ["შოპენჰაუერი; ჰერაკლიტე; ბერძნული ტრაგედია", "ჰაიდეგერი; სარტრი; კამიუ; იუნგი"], ["ფრეგე; რასელი; შოპენჰაუერი", "ვენის წრე; ანალიტიკური ფილოსოფია"], ["ჰუსერლი; ჰაიდეგერი; კირკეგორი", "სიმონ დე ბოვუარი; ფანონი"], ["ნიცშე; კირკეგორი; დოსტოევსკი", "აბსურდიზმი; თანამედროვე ლიტერატურა"]],CH=[["მასწავლებელი → მოსწავლე", ["სოკრატე", "პლატონი", "არისტოტელე", "ალექსანდრე მაკედონელი"]], ["სტოიკოსები", ["ზენონი", "ეპიქტეტე", "მარკუს ავრელიუსი", "კოგნიტური თერაპია"]], ["ახალი დრო", ["დეკარტი", "სპინოზა", "ჰიუმი", "კანტი", "ჰეგელი"]], ["ეგზისტენციალიზმი", ["კირკეგორი", "ნიცშე", "ჰაიდეგერი", "სარტრი", "კამიუ"]], ["ქართული კვალი", ["პლატონი", "პროკლე", "იოანე პეტრიწი"]]];
+function lnk(t,x){var e=mk("p","ln",t);x.split("; ").forEach(function(n,k){var j=P.findIndex(function(q){return q[0]==n});if(k)e.appendChild(document.createTextNode("; "));if(j>=0){var a=mk("button","lk",n);a.onclick=function(){ob(j)};e.appendChild(a)}else e.appendChild(document.createTextNode(n))});return e}
+function ob(i){var p=P[i],b=BI[i],c=document.getElementById("bc"),bio=document.getElementById("bio"),d=DP[i],ln=LN[i];bio.dataset.gl=GL[i];bio.style.setProperty("--hue",HU[i]);c.innerHTML="";
+var av=mk("img","av");av.alt=p[0];av.src=PH[i]||"img/"+i+".jpg";av.onerror=function(){var m=mk("div","av",p[0].charAt(0));if(av.parentNode)av.parentNode.replaceChild(m,av)};
+var l1=mk("ul"),l2=mk("ul"),nv=mk("div","bn"),pv=mk("button","","← წინა"),nx=mk("button","","შემდეგი →"),ct=mk("button","btn","Premium ანალიზი");
+b[1].split("; ").forEach(function(t){l1.appendChild(mk("li","",t))});b[2].split("; ").forEach(function(t){l2.appendChild(mk("li","",t))});
+pv.onclick=function(){ob((i+P.length-1)%P.length)};nx.onclick=function(){ob((i+1)%P.length)};ct.onclick=openMember;nv.append(pv,nx);
+c.append(av,mk("h2","",p[0]),mk("small","",p[1]+" · "+p[3]));
+if(d)d.l.forEach(function(t){c.appendChild(mk("p","",t))});else c.appendChild(mk("p","",b[0]));
+c.append(mk("h3","","მთავარი იდეები"),l1,mk("h3","","ძირითადი ნაშრომები"),l2);
+if(d){c.appendChild(mk("h3","","სხვა მოაზროვნეები ამავე საკითხზე"));d.x.forEach(function(x){var e=mk("div","xc");e.append(mk("b","",x[0]+": "),document.createTextNode(x[1]));c.appendChild(e)});c.appendChild(mk("div","rq","დასაფიქრებელი: "+d.r))}else c.appendChild(mk("p","sec","სიღრმისეული ვერსია მალე დაემატება."));
+c.append(mk("h3","","გავლენის ჯაჭვი"),lnk("← გავლენა მიიღო: ",ln[0]),lnk("→ გავლენა მოახდინა: ",ln[1]),mk("div","qt","„"+p[5]+"“"),ct,nv);
+if(!bio.open)bio.showModal();bio.scrollTop=0}
+(function(){var h=document.getElementById("chd");CH.forEach(function(c){h.appendChild(mk("h3","",c[0]));var r=mk("div","ch");c[1].forEach(function(n,k){if(k)r.appendChild(mk("span","ar","→"));var j=P.findIndex(function(q){return q[0]==n});if(j>=0){var a=mk("button","lk",n);a.onclick=function(){ob(j)};r.appendChild(a)}else r.appendChild(mk("span","",n))});h.appendChild(r)})})();
+</script>
+<button id="up" aria-label="ზემოთ დაბრუნება">↑</button>
+<script>
+(function(){var u=document.getElementById("up"),t=0;addEventListener("scroll",function(){if(t)return;t=requestAnimationFrame(function(){t=0;u.classList.toggle("on",scrollY>700)})},{passive:true});u.onclick=function(){scrollTo({top:0,behavior:"smooth"})}})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e2a1f59c8d8341f5bd1f39ea8346ff73"}'></script><!-- End Cloudflare Web Analytics -->
+</body>

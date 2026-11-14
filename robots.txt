@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bitter-butterfly-856c.giopro215.workers.dev/sitemap.xml
